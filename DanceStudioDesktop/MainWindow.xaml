@@ -1,0 +1,24 @@
+﻿<Window x:Class="DanceStudioDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DanceStudioDesktop"
+        mc:Ignorable="d"
+        Title="Petrik Tánciskola" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="Törlés" Height="50" Width="200" Click="DeleteCourse" Margin="0,12.5,0,25" />
+        <DataGrid Grid.Row="1" x:Name="CoursesDataGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Név" Binding="{Binding Name}" Width="2*"/>
+                <DataGridTextColumn Header="Típus" Binding="{Binding Type}" Width="*"/>
+                <DataGridTextColumn Header="Hossz" Binding="{Binding Length}" Width="*"/>
+                <DataGridTextColumn Header="Oktató" Binding="{Binding Instructor}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
